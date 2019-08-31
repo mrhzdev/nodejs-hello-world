@@ -1,0 +1,13 @@
+version: '2'
+services:
+  app:
+    build: .
+    environment:
+      NODE_ENV: development
+    command: node_modules/.bin/nodemon --exec npm start
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/home/app/node_docker
+      - /home/app/node_docker/node_modules
+    tty: true
